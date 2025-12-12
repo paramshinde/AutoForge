@@ -1,0 +1,79 @@
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-root: #09090b;       /* Deepest Black */
+  --bg-sidebar: #0c0c0e;    /* Chat Panel */
+  --bg-activity: #18181b;   /* File Tree */
+  --bg-editor: #101012;     /* Editor */
+  --border: #27272a;
+  --accent: #3b82f6;        /* Bolt Blue */
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --success: #10b981;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-root);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Chat Panel (Left) */
+.chat-pane {
+  width: 350px;
+  min-width: 350px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+/* File Tree (Middle) */
+.explorer-pane {
+  width: 250px;
+  min-width: 250px;
+  background: var(--bg-activity);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Editor (Right) */
+.editor-pane {
+  flex: 1;
+  background: var(--bg-editor);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* Utility Classes */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.font-mono { font-family: var(--font-mono); }
+.border-b { border-bottom: 1px solid var(--border); }
